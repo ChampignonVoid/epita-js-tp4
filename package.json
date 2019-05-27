@@ -6,11 +6,12 @@
   "author": "Laxman Thayalan <laxman.thayalan@epita.fr>",
   "license": "MIT",
   "scripts": {
-    "start": "./node_modules/.bin/webpack-dev-server --config ./config/webpack/server.js",
+    "start": "./node_modules/.bin/webpack-dev-server --config ./config/webpack/server.js --hot",
     "build": "./node_modules/.bin/webpack --config ./config/webpack/build.js"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
+    "babel-loader": "7",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^2.1.1",
@@ -18,10 +19,11 @@
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.7.0",
+    "react": "16.2.0",
+    "react-dom": "16.2.0",
     "url-loader": "^1.1.2",
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2",
-    "webpack-dev-server": "^3.4.1",
     "webpack-merge": "^4.2.1"
   },
   "babel": {
@@ -41,6 +43,6 @@
     ]
   },
   "dependencies": {
-    "babel-loader": "7"
+    "webpack-dev-server": "^3.4.1"
   }
 }
