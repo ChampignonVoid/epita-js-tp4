@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import tweetsList from './TweetsList';
+import tweetsList from './TweetsList'
 
-const rootReducer = combineReducers({tweetsList});
+const rootReducer = combineReducers({ tweetsList })
 
 export default rootReducer

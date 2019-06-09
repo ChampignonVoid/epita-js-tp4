@@ -1,9 +1,13 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React from 'react'
+import { connect } from 'react-redux'
 
 import TweetForm from './tweetForm'
 
-import { addTweet } from './../actions'
+import { addTweet, removeTweet } from './../actions'
+
+const tweet_content_style = {
+    margin: "10px",
+}
 
 const mapStateToProps = ({ tweetsList }) => {
     return {
@@ -16,7 +20,12 @@ const TweetsList = ({ tweetsList = [], dispatch}) => {
 
     return  <div>
                 <div>
-                    {tweets.map((tweet) => <p key={tweet.id}>{tweet.content}</p>)}
+                    {tweets.map((tweet, index) =>
+                        <div key={"tweet_container_" + tweet.id}>
+                            <span style={tweet_content_style}>{tweet.content}</span>
+                            <button key={"del_btn_" + tweet.id} onClick={() => dispatch(removeTweet(index))}>X</button>
+                        </div>)
+                    }
                 </div>
                 <TweetForm actionSubmit={content => dispatch(addTweet(content))}/>
             </div>
