@@ -1,15 +1,8 @@
 import React from 'react';
 
 import { connect } from "react-redux";
-import { addTweet } from '../actions/index'
 
 let id = 0
-
-function mapDispatchToProps(dispatch) {
-    return {
-        addTweet: article => dispatch(addTweet(article))
-    };
-}
 
 class TweetForm extends React.Component {
     constructor() {
@@ -27,9 +20,11 @@ class TweetForm extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
         const content = this.state.content;
-        ++id;
-        this.props.addTweet({ id, content });
-        this.setState({ content: "" });
+        if (content) {
+            ++id;
+            this.props.actionSubmit({ id, content });
+            this.setState({ content: "" });
+        }
     }
 
     render() {
@@ -48,4 +43,4 @@ class TweetForm extends React.Component {
     }
 }
 
-export default connect(null, mapDispatchToProps)(TweetForm)
+export default connect()(TweetForm)

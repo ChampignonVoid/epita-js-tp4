@@ -2,7 +2,7 @@ import React from 'react'
 import { hot } from 'react-hot-loader'
 import { Provider } from 'react-redux'
 
-import TweetList from './components/tweetsList'
+import TweetList from './components/TweetsList'
 import store from './store'
 
 const App = () =>

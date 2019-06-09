@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import tweetsList from './tweetsList';
+import tweetsList from './TweetsList';
 
 const rootReducer = combineReducers({tweetsList});
 
